@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+    <head>
+ 
+        </style>
+        <title>News-Oriented Stock Price Prediction</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/trail_css.css') }}">
+
+    </head>
+    <body>
+        <div class="topnav">
+            <a href="/">Home</a>
+            <a href="https://github.com/Technocolabs100/Stock-Price-Trend-Prediction-Based-on-News-DSI">GitHub</a>       
+            <a href="https://www.linkedin.com/company/technocolabs/mycompany/">Company LinkedIn</a>
+          </div>
+          
+          <div class="intro"> <h1>News-Oriented Stock Price Prediction</h1> 
+            <a href="https://technocolabs.tech/">
+            <img src="{{ url_for('static', filename='img/logo1.png') }}" alt="" width="250" height="90">
+            </a>
+            <h2>Data Science Internship</h2>
+        </div>
+
+        <div class="get_info">
+            <h2>Enter  the  details  and  get  the  prediction<br></h2>
+            <form action="{{url_for('predict')}}" method="POST">      
+                <label for="open_price">Open Price:</label>
+                <input type="text" id="open" name="open" placeholder="Enter Open Price" size="20" >
+                <label for="close_price">Close Price:</label>
+                <input type="text" id="close" name="close" placeholder="Enter Close Price" size="20"><br><br>
+                <label for="news">Enter News</label><br>
+                <input type="text" id="news" name="news"  style="height:120px;width:550px;" ><br><br>
+                <input type="submit" value="Predict">
+             </form>
+
+             <br>
+             <br>
+             <div class="prediction">{{output|safe}}</div>
+        </div>
+
+        <div class="container">
+            <h1>Our Team</h1>
+            <div class="team">
+              
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='img/dhruv.jpg') }}" alt="Avatar" style="width:250px;height:280px;"><br>
+                            Dhruv Bhatia
+                          </div>
+                          <div class="flip-card-back">
+                            <h2>Dhruv Bhatia</h2>
+                            <p>TEAM MENTOR</p>
+                            <p>Ex- Team Leader @Technocolabs</p>
+                            <p> Ex - Sr. Sales Manager</p>
+                            <p>Team Leader @Technocolabs</p>
+                            <a href="https://www.linkedin.com/in/bhatia-dhruv/">
+                              <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="" width="40" height="40" style="margin-top: 1px; margin-right: 10px;"">
+                              </a>
+                              <a href="https://github.com/dhruvbhatia563">
+                                  <img src="{{ url_for('static', filename='img/github1.jpg') }}" alt="" width="50" height="50" style="margin-top: 1px; margin-left: 10px;">
+                                  </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='img/anjali.jpg') }}" alt="Avatar" style="width:250px;height:280px;"><br>
+                            Anjali Bathla
+                          </div>
+                          <div class="flip-card-back">
+                            <h2>Anjali Bathla</h2>
+                            <p>An architecture student at the Indian Institute of Technology, Roorkee</p>
+                            <p>Data Science Intern @Technocolabs</p>
+                            <a href="https://www.linkedin.com/in/anjali-bathla-041507148/">
+                              <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="" width="40" height="40" style="margin-top: 1px; margin-right: 10px;"">
+                              </a>
+                              <a href="https://github.com/ANJALIBATHLA">
+                                  <img src="{{ url_for('static', filename='img/github1.jpg') }}" alt="" width="50" height="50" style="margin-top: 1px; margin-left: 10px;">
+                                  </a>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='img/shraddha.jpg') }}" alt="Avatar" style="width:250px;height:280px;"><br>
+                            Shraddha Joshi 
+                          </div>
+                          <div class="flip-card-back">
+                            <h2>Shraddha Joshi </h2>
+                            <p> Pursuing MSc Data Science at Christ(Deemed to be University) Lavasa, Pune</p>
+                            <p>Data Science Intern @Technocolabs</p>
+                            <a href="https://www.linkedin.com/in/shraddha-joshi-1911a01b4">
+                              <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="" width="40" height="40" style="margin-top: 1px; margin-right: 10px;"">
+                              </a>
+                              <a href="https://github.com/shraddhaj99">
+                                  <img src="{{ url_for('static', filename='img/github1.jpg') }}" alt="" width="50" height="50" style="margin-top: 1px; margin-left: 10px;">
+                                  </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='img/Himanshu.jpg') }}" alt="Avatar" style="width:250px;height:280px;"><br>
+                            Himanshu Bhatia
+                          </div>
+                          <div class="flip-card-back">
+                            <h2>Himanshu Bhatia</h2>
+                            <p>M.Sc. Informatics post graduate from Institute of Informatics and Communication, University of Delhi</p>
+                            <p>Data Science Intern @Technocolabs</p>
+                            <a href="https://www.linkedin.com/in/himanshubhatia1998/">
+                              <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="" width="40" height="40" style="margin-top: 1px; margin-right: 10px;"">
+                              </a>
+                              <a href="https://github.com/HimanshuBhatia20">
+                                  <img src="{{ url_for('static', filename='img/github1.jpg') }}" alt="" width="50" height="50" style="margin-top: 1px; margin-left: 10px;">
+                                  </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='img/keerthana.jpg') }}" alt="Avatar" style="width:250px;height:280px;"><br>
+                            Thota Sai Keerthana
+                          </div>
+                          <div class="flip-card-back">
+                            <h2>Thota Sai Keerthana</h2>
+                            <p>3rd Year Computer Engineering Student at Indian Institute of Information Technology Design and Manufacturing,Kancheepuram</p>
+                            <p>Data Science Intern @Technocolabs</p><br>
+                            <a href="https://www.linkedin.com/in/sai-keerthana-thota-01b8871a1/">
+                                <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="" width="40" height="40" style="margin-top: 1px; margin-right: 10px;"">
+                                </a>
+                                <a href="https://github.com/keerthana0906">
+                                    <img src="{{ url_for('static', filename='img/github1.jpg') }}" alt="" width="50" height="50" style="margin-top: 1px; margin-left: 10px;">
+                                    </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      
+             
+
+            </div>
+
+        </div>
+
+        <div class="container">
+            <div class="team">
+              
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="{{ url_for('static', filename='img/rajan.jpg') }}" alt="Avatar" style="width:250px;height:280px;"><br>
+                    Rajan Jangir
+                  </div>
+                  <div class="flip-card-back">
+                    <h2>Rajan Jangir</h2>
+                    <p>Pre final year undergraduate (EE) at Engineering College Bikaner</p>
+                    <p>Data Science Intern @Technocolabs</p>
+                    <a href="https://www.linkedin.com/in/rajan-jangir">
+                      <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="" width="40" height="40" style="margin-top: 1px; margin-right: 10px;"">
+                      </a>
+                      <a href="https://github.com/Rajan-jangir">
+                          <img src="{{ url_for('static', filename='img/github1.jpg') }}" alt="" width="50" height="50" style="margin-top: 1px; margin-left: 10px;">
+                          </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='img/deba.jpg') }}" alt="Avatar" style="width:250px;height:280px;"><br>
+                            Debabrata Panda 
+                          </div>
+                          <div class="flip-card-back">
+                            <h2>Debabrata Panda </h2>
+                            <p>Student at NIT Rourkela</p>
+                            <p>A data nerd, who loves to work & get along with data around</p>
+                            <p>Data Science Intern @Technocolabs</p>
+                            <a href="https://www.linkedin.com/in/debabrata-panda-8a73391aa/">
+                            <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="" width="40" height="40" style="margin-top: 1px; margin-right: 10px;"">
+                            </a>
+                            <a href="https://github.com/deba6599">
+                                  <img src="{{ url_for('static', filename='img/github1.jpg') }}" alt="" width="50" height="50" style="margin-top: 1px; margin-left: 10px;">
+                            </a> 
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='img/suchita.jpg') }}" alt="Avatar" style="width:250px;height:280px;"><br>
+                            J Suchita
+                          </div>
+                          <div class="flip-card-back">
+                            <h2>J Suchita</h2>
+                            <p>MBA - Business Analytics student at Christ University, Bangalore
+                              </p>
+                            <p>Data Science Intern @Technocolabs</p>
+                            <a href="https://www.linkedin.com/in/suchita-j-57a90116b/">
+                              <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="" width="40" height="40" style="margin-top: 1px; margin-right: 10px;"">
+                              </a>
+                              <a href="https://github.com/suchita16">
+                                    <img src="{{ url_for('static', filename='img/github1.jpg') }}" alt="" width="50" height="50" style="margin-top: 1px; margin-left: 10px;">
+                              </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='img/somya.jpg') }}" alt="Avatar" style="width:250px;height:280px;"><br>
+                            Somya Ranjan Patra
+                          </div>
+                          <div class="flip-card-back">
+                            <h2>Somya Ranjan Patra</h2>
+                            <p>Studying at NIT Rourkela</p>
+                            <p>Interested in the field of Data Science and its applications</p>
+                            <p>Data Science Intern @Technocolabs</p>
+                            <a href="https://www.linkedin.com/in/somya-patra-234b501a2/">
+                              <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="" width="40" height="40" style="margin-top: 1px; margin-right: 10px;"">
+                              </a>
+                              <a href="https://github.com/Somya-Patra">
+                                    <img src="{{ url_for('static', filename='img/github1.jpg') }}" alt="" width="50" height="50" style="margin-top: 1px; margin-left: 10px;">
+                              </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='img/aakruthi.jpg') }}" alt="Avatar" style="width:250px;height:280px;"><br>
+                            Aakruti Ghatole 
+                          </div>
+                          <div class="flip-card-back">
+                            <h2>Aakruti Ghatole </h2>
+                            <p>Currently pursuing 3rd year of engineering at MKSSS Cummins College of Engineering for Women, Pune</p>
+                            <p>Data Science Intern @Technocolabs</p>
+                            <a href="https://www.linkedin.com/in/aakruti-ghatole-708471189/">
+                              <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="" width="40" height="40" style="margin-top: 1px; margin-right: 10px;">
+                              </a>
+                              <a href="https://github.com/aakrutayyyyy">
+                                  <img src="{{ url_for('static', filename='img/github1.jpg') }}" alt="" width="50" height="50" style="margin-top: 1px; margin-left: 10px;">
+                                  </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      
+
+            </div>
+            <div class="container">
+                <div class="team">
+                  
+                        <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='img/Parul.jpg') }}" alt="Avatar" style="width:250px;height:280px;"><br>
+                            Parul Sharma
+                          </div>
+                          <div class="flip-card-back">
+                            <h2>Parul Sharma</h2>
+                            <p>M.Sc. Informatics post graduate from Institute of Informatics and Communication, University of Delhi</p>
+                            <p>Data Science Intern @Technocolabs</p>
+                            <a href="https://www.linkedin.com/in/parul-sharma-82a033195/">
+                              <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="" width="40" height="40" style="margin-top: 1px; margin-right: 10px;"">
+                              </a>
+                              <a href="https://github.com/Parulsharma-tech">
+                                  <img src="{{ url_for('static', filename='img/github1.jpg') }}" alt="" width="50" height="50" style="margin-top: 1px; margin-left: 10px;">
+                                  </a>
+                          </div>
+                        </div>
+                      </div>
+    
+                          <div class="flip-card">
+                            <div class="flip-card-inner">
+                              <div class="flip-card-front">
+                                <img src="{{ url_for('static', filename='img/chakradhar.jpg') }}" alt="Avatar" style="width:250px;height:280px;"><br>
+                                Chakradhar Reddy Yerragudu
+                              </div>
+                              <div class="flip-card-back">
+                                <h2>Chakradhar Reddy Yerragudu</h2>
+                                <p>Student at Manipal institute of technology</p>
+                                <p>Intrested in working on Data Science and wen dev</p>
+                                <p>Data Science Intern @Technocolabs</p>
+                                <a href="https://www.linkedin.com/in/chakradhar-reddy-yerragudi-a18a28166">
+                                  <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="" width="40" height="40" style="margin-top: 1px; margin-right: 10px;"">
+                                  </a>
+                                  <a href="https://github.com/chakradhar123">
+                                        <img src="{{ url_for('static', filename='img/github1.jpg') }}" alt="" width="50" height="50" style="margin-top: 1px; margin-left: 10px;">
+                                  </a>
+                              </div>
+                            </div>
+                          </div>
+    
+                          <div class="flip-card">
+                            <div class="flip-card-inner">
+                              <div class="flip-card-front">
+                                <img src="{{ url_for('static', filename='img/prathyusha.jpg') }}" alt="Avatar" style="width:250px;height:280px;"><br>
+                                Prathyusha Mitra
+                              </div>
+                              <div class="flip-card-back">
+                                <h2>Prathyusha Mitra</h2>
+                                <p>Completed Masters in Computer Science from St.Xaviers College(autonomous), Kolkata.</p>
+                                <p>Data science enthusiast</p>
+                                <p>Data Science Intern @Technocolabs</p>
+                                <a href="https://www.linkedin.com/in/pratyusha-mitra-4839711b2">
+                                  <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="" width="40" height="40" style="margin-top: 1px; margin-right: 10px;"">
+                                  </a>
+                                  <a href="https://github.com/pratyusha-code">
+                                        <img src="{{ url_for('static', filename='img/github1.jpg') }}" alt="" width="50" height="50" style="margin-top: 1px; margin-left: 10px;">
+                                  </a>
+                              </div>
+                            </div>
+                          </div>
+    
+                          <div class="flip-card">
+                            <div class="flip-card-inner">
+                              <div class="flip-card-front">
+                                <img src="#" alt="Avatar" style="width:300px;height:300px;"><br>
+                                Ashlesha Godbole
+                              </div>
+                              <div class="flip-card-back">
+                                <h2>Ashlesha Godbole</h2>
+                                <p>Student</p>
+                                <p>Data Science Intern @Technocolabs</p>
+                                <a href="https://linkedin.com">
+                                  <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="" width="40" height="40" style="margin-top: 1px; margin-right: 10px;"">
+                                  </a>
+                                  <a href="https://github.com">
+                                        <img src="{{ url_for('static', filename='img/github1.jpg') }}" alt="" width="50" height="50" style="margin-top: 1px; margin-left: 10px;">
+                                  </a>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          
+                          <div class="flip-card">
+                            <div class="flip-card-inner">
+                              <div class="flip-card-front">
+                                <img src="{{ url_for('static', filename='img/subhankar.jpg') }}" alt="Avatar" style="width:250px;height:280px;"><br>
+                                Subhankar Kumar Choudhury
+                              </div>
+                              <div class="flip-card-back">
+                                <h2>Subhankar Kumar Choudhury</h2>
+                                <p>4th year Electrical Engineering student at National Institute of Technology Silchar (NIT silchar)</p>
+                                <p>Data Science Intern @Technocolabs</p>
+                                <a href="https://linkedin.com">
+                                  <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="" width="40" height="40" style="margin-top: 1px; margin-right: 10px;"">
+                                  </a>
+                                  <a href="https://github.com">
+                                        <img src="{{ url_for('static', filename='img/github1.jpg') }}" alt="" width="50" height="50" style="margin-top: 1px; margin-left: 10px;">
+                                  </a>
+                              </div>
+                            </div>
+                          </div>
+                          
+                 
+    
+                </div>
+    
+            </div>
+
+        </div>
+      
+        
+                           
+                    
+   
+    </body>
+</html>
